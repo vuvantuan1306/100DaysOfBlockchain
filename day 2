@@ -1,0 +1,46 @@
+# Day 2: Writing and Deploying My First Smart Contract with Hardhat
+
+## ✅ What I accomplished today
+
+Today I successfully:
+- Installed Node.js and Hardhat development environment
+- Initialized a new Hardhat project using `npx hardhat`
+- Wrote my first smart contract in Solidity: `HelloWorld.sol`
+  - It stores a message on-chain
+  - Includes a public getter and a `setMessage()` function to update the message
+- Wrote a deployment script `deploy.js` in the `scripts/` folder
+- Compiled and deployed the contract on Hardhat's local blockchain network
+
+## 📄 Contract Code (HelloWorld.sol)
+
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.18;
+
+contract HelloWorld {
+    string public message;
+
+    constructor(string memory _message) {
+        message = _message;
+    }
+
+    function setMessage(string memory _newMessage) public {
+        message = _newMessage;
+    }
+}
+const hre = require("hardhat");
+
+async function main() {
+  const HelloWorld = await hre.ethers.getContractFactory("HelloWorld");
+  const hello = await HelloWorld.deploy("Hello, Web3!");
+
+  await hello.waitForDeployment();
+
+  console.log("✅ HelloWorld deployed at:", await hello.getAddress());
+}
+
+main().catch((error) => {
+  console.error(error);
+  process.exitCode = 1;
+});
+✅ HelloWorld deployed at: 0x5FbDB2315678afecb367f032d93F642f64180aa3
