@@ -1,0 +1,25 @@
+# Day 4 - Deploying HelloWorld Contract to Sepolia Testnet
+
+Today I deployed the `HelloWorld` smart contract to the Sepolia testnet using Hardhat and Infura.
+
+## ✅ What I did:
+- Installed `dotenv` to manage sensitive keys securely
+- Created a `.env` file to store `PRIVATE_KEY` and `INFURA_API_KEY`
+- Updated `hardhat.config.js` to support Sepolia network and Solidity version `^0.8.28`
+- Wrote a `deploy.js` script inside the `scripts/` directory
+- Successfully deployed the contract and received the testnet address
+
+## 🚀 Contract Address (Sepolia):
+```
+0xf7B5F5Ae458c7293Ad8aafB98884c70C0b28f476
+```
+
+## 💡 Learned:
+- How to configure Hardhat for deploying to a public testnet
+- Importance of `.env` for protecting secrets
+- Fixing compiler mismatch issues (`HH606`)
+- Sepolia is a great sandbox for Ethereum development!
+
+---
+
+Tomorrow I'll start working on verifying the contract on Etherscan and interacting with it via frontend or scripts. Stay tuned!
