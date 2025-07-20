@@ -1,0 +1,43 @@
+# Day 5: Verifying & Interacting with Smart Contract on Sepolia
+
+Today, I completed the following tasks as part of the #100DaysOfBlockchain challenge:
+
+---
+
+## ✅ Contract Verification on Etherscan
+
+I verified the HelloWorld smart contract deployed to Sepolia using Hardhat Verify.
+
+- Contract address: `0xf7B5F5Ae458c7293Ad8aafB98884c70C0b28f476`
+- Etherscan: [View on Etherscan](https://sepolia.etherscan.io/address/0xf7B5F5Ae458c7293Ad8aafB98884c70C0b28f476#code)
+- Constructor argument: `"Hello, Web3!"`
+
+---
+
+## 🔄 Interacting with the Contract
+
+I wrote an `interact.js` script that:
+
+- Reads the current message from the smart contract
+- Sends a transaction to update the message
+- Reads the updated message from the blockchain
+
+### Output:
+
+📥 Current message: Hello from Day 5!
+✅ Updated message: Hello from Day 5!
+
+This confirmed that both `message()` and `setMessage()` functions are working correctly on the testnet.
+
+---
+
+## 💡 What I learned:
+
+- How to verify a contract with constructor arguments
+- How to interact with deployed contracts using scripts
+- How to send and wait for a transaction using Hardhat
+
+---
+
+#100DaysOfBlockchain  
+#ZamaCreatorProgram  
